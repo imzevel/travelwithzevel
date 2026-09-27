@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLO TRAVEL OS — Travel alone. Feel prepared.</title>
+  <meta name="description" content="A calm preparation system for solo travelers. Plan, prepare, and handle the unexpected.">
+
+  <!-- Applied before paint to avoid a flash of the wrong theme -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('stos-theme');
+        const preferred = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = saved || preferred;
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M3 11l18-7-7 18-3-7-8-4z"/>
+          </svg>
+        </span>
+        SOLO TRAVEL OS
+      </a>
+
+      <nav class="nav-links">
+        <a href="#system">How it works</a>
+        <a href="#experience">Inside</a>
+        <a href="#pricing">Compare</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme" id="theme" aria-label="Toggle theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="moon" style="display:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>
+          </svg>
+        </button>
+        <a class="btn btn-primary" href="#pricing">Get started</a>
+        <button class="menu" id="menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span>A calm system for solo travel</span>
+          <h1>Travel alone.<br>Feel prepared.</h1>
+          <p class="hero-copy">Plan your trip, get ready to leave, and keep a clear next step when plans change with all in one calm preparation system.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#pricing">Get SOLO TRAVEL OS</a>
+            <a class="btn btn-ghost" href="#experience">See inside</a>
+          </div>
+          <p class="hero-note">Everything you need to feel prepared for your first solo trip.</p>
+        </div>
+
+        <div class="mock notion-mock">
+          <div class="mock-bar">
+            <i class="mock-dot"></i><i class="mock-dot"></i><i class="mock-dot"></i>
+            <span class="mock-title">SOLO TRAVEL OS · Dashboard</span>
+          </div>
+          <div class="mock-body">
+
+            <div class="nm-head">
+              <span class="nm-home">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+              </span>
+              <div>
+                <div class="nm-title">Dashboard <span class="nm-sep">|</span> Preparing</div>
+                <div class="nm-sub">Your next adventure starts here.</div>
+              </div>
+            </div>
+
+            <div class="nm-quick">
+              <span class="label">Quick Access</span>
+              <div class="nm-tags">
+                <span class="nm-tag">Itinerary</span>
+                <span class="nm-tag">Expenses</span>
+                <span class="nm-tag">Places</span>
+                <span class="nm-tag">Bookings</span>
+                <span class="nm-tag">Budget</span>
+                <span class="nm-tag">Tasks</span>
+                <span class="nm-tag nm-tag-active">Traveling</span>
+              </div>
+            </div>
+
+            <div class="nm-trip">
+              <div class="nm-trip-photo">
+                <span class="nm-trip-badge">Traveling</span>
+              </div>
+              <div class="nm-trip-info">
+                <div class="nm-trip-name">🇯🇵 Japan Solo Trip</div>
+                <div class="nm-trip-dates">Oct 12 — Oct 20, 2026</div>
+                <div class="nm-trip-meta">16 days until trip</div>
+              </div>
+            </div>
+
+            <div class="nm-readiness">
+              <div class="nm-readiness-top">
+                <span class="label">Trip Readiness</span>
+                <strong>61</strong>
+              </div>
+              <div class="bar"><span style="width:61%"></span></div>
+              <div class="nm-stats">
+                <div class="nm-stat"><span>Planning</span><b>50%</b></div>
+                <div class="nm-stat"><span>Bookings</span><b>100%</b></div>
+                <div class="nm-stat"><span>Documents</span><b>80%</b></div>
+                <div class="nm-stat"><span>Packing</span><b>42%</b></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="soft">
+      <div class="wrap problem">
+        <span class="eyebrow">The problem</span>
+        <h2>Planning your first solo trip can feel overwhelming.</h2>
+        <p>The trip itself isn't the hard part. It's keeping track of everything around it and knowing what matters when plans change.</p>
+        <div class="points">
+          <div class="point">
+            <strong>Everything gets scattered.</strong>
+            <span>Bookings, ideas, notes and documents end up in different places.</span>
+          </div>
+          <div class="point">
+            <strong>You don't know what's missing.</strong>
+            <span>Planning is easy to start. Knowing when you're actually ready is harder.</span>
+          </div>
+          <div class="point">
+            <strong>Plans can change.</strong>
+            <span>When something goes wrong, you need a next step — not another tab.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System -->
+    <section id="system">
+      <div class="wrap">
+        <div class="intro">
+          <span class="eyebrow">The system</span>
+          <h2>Three layers. One calm workflow.</h2>
+          <p>SOLO TRAVEL OS keeps the complexity behind the scenes and puts the next useful thing in front of you.</p>
+        </div>
+        <div class="system">
+          <article class="system-card">
+            <div class="num">01 · BASIC</div>
+            <div>
+              <h3>Plan</h3>
+              <p>Turn an idea into a clear trip: itinerary, bookings, places, budget and tasks.</p>
+              <div class="tags">Itinerary · Bookings · Budget · Tasks</div>
+            </div>
+          </article>
+          <article class="system-card prepare">
+            <div class="num">02 · PRO</div>
+            <div>
+              <h3>Prepare</h3>
+              <p>Know what's ready, what's missing, and what deserves your attention before departure.</p>
+              <div class="tags">Packing · Documents · Safety · Readiness</div>
+            </div>
+          </article>
+          <article class="system-card handle">
+            <div class="num">03 · ULTIMATE</div>
+            <div>
+              <h3>Handle</h3>
+              <p>When plans change, have a clear next step, useful contacts, and a backup to fall back on.</p>
+              <div class="tags">What-If · Backups · Emergency</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="experience soft">
+      <div class="wrap">
+
+        <div class="exp">
+          <div class="copy">
+            <span class="eyebrow">01 · Plan</span>
+            <h2>Everything starts with one clear trip.</h2>
+            <p>Keep the destination, itinerary, bookings, places, budget and tasks connected instead of scattered across different pages.</p>
+            <div class="micro">One trip · One source of truth</div>
+          </div>
+          <div class="visual-wrap">
+            <div class="visual">
+              <div class="visual-top">
+                <div>
+                  <div class="label">Japan Solo Trip</div>
+                  <div class="visual-title">Tokyo · Kyoto</div>
+                  <div class="visual-sub">Oct 12 — Oct 20</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="label">Remaining</div>
+                  <strong style="font:800 22px Manrope">¥212,000</strong>
+                </div>
+              </div>
+              <div class="visual-grid">
+                <div class="mini"><span>UPCOMING</span><strong>Flight to Tokyo</strong></div>
+                <div class="mini"><span>NEXT UP</span><strong>Book Kyoto stay</strong></div>
+                <div class="mini"><span>ITINERARY</span><strong>Day 1 · Shibuya</strong></div>
+                <div class="mini"><span>PLACES</span><strong>12 saved</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp reverse">
+          <div class="copy">
+            <span class="eyebrow">02 · Prepare</span>
+            <h2>Know you're ready before you leave.</h2>
+            <p>Instead of checking every page yourself, get one simple picture of what's ready and what still needs attention.</p>
+            <div class="micro">Packing · Documents · Safety · Readiness</div>
+          </div>
+          <div class="visual-wrap">
+            <div class="visual">
+              <div class="readiness-box">
+                <div class="ring"><div class="ring-inner">82%</div></div>
+                <div>
+                  <div class="label" style="margin-bottom:18px">Trip readiness</div>
+                  <div class="rlist">
+                    <div class="ritem"><span>Planning</span><div class="rtrack"><span style="width:100%"></span></div><span>100</span></div>
+                    <div class="ritem"><span>Bookings</span><div class="rtrack"><span style="width:90%"></span></div><span>90</span></div>
+                    <div class="ritem"><span>Documents</span><div class="rtrack"><span style="width:80%"></span></div><span>80</span></div>
+                    <div class="ritem"><span>Packing</span><div class="rtrack"><span style="width:60%"></span></div><span>60</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp">
+          <div class="copy">
+            <span class="eyebrow" style="background:var(--clay-bg);color:var(--clay)">03 · Ultimate</span>
+            <h2>When plans change, you already have a next step.</h2>
+            <p>Ultimate adds a calm contingency layer for the situations you hope never happen. <b>All without making the rest of the system feel complicated.</b></p>
+            <div class="micro">What-If · Backup Plans · Emergency Contacts</div>
+          </div>
+          <div class="visual-wrap">
+            <div class="visual">
+              <div class="whatif-head">
+                <strong>What if something changes?</strong>
+                <span class="label">ULTIMATE</span>
+              </div>
+              <div class="scenario">
+                <div class="label">Scenario</div>
+                <h3>Flight cancelled</h3>
+                <p>Your plan already has a next step.</p>
+                <div class="steps">
+                  <div class="step"><b>01</b>Check the updated departure information.</div>
+                  <div class="step"><b>02</b>Review available rebooking options.</div>
+                  <div class="step"><b>03</b>Contact the provider if needed.</div>
+                  <div class="step"><b>04</b>Use your saved backup plan.</div>
+                </div>
+              </div>
+              <div class="scenario-foot">Scenario → Action → Contact → Backup</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+        <!-- Reviews -->
+    <section id="reviews" class="soft">
+      <div class="wrap">
+        <div class="intro">
+          <span class="eyebrow">Reviews</span>
+          <h2>Built for peace of mind.</h2>
+          <p>Hear from solo travelers who used the system to plan, prepare, and handle the unexpected with absolute clarity.</p>
+        </div>
+ 
+        <div class="reviews">
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">I used to always worry I’d forgotten something before a flight. Having one system that keeps my packing, documents, and bookings together made preparing for my first trip feel so much calmer.</p>
+            <div class="review-who">
+              <span class="review-avatar">M</span>
+              <div>
+                <strong>Maya R.</strong>
+                <span>Solo trip to Vietnam</span>
+              </div>
+            </div>
+          </article>
+ 
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">The Trip Readiness indicator completely changed how I prepare. I knew exactly when I was actually ready to go, rather than frantically guessing two days before my flight.</p>
+            <div class="review-who">
+              <span class="review-avatar">D</span>
+              <div>
+                <strong>Daniel K.</strong>
+                <span>First solo backpacking trip</span>
+              </div>
+            </div>
+          </article>
+ 
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">My flight was actually cancelled, and surprisingly, I didn't panic at all. I just opened the What-If scenarios and immediately had absolute clarity on what my next step should be.</p>
+            <div class="review-who">
+              <span class="review-avatar">S</span>
+              <div>
+                <strong>Sara T.</strong>
+                <span>Ultimate tier user</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust bar -->
+    <div class="trust">
+      <div class="wrap trust-inner">
+        <span>Built for first-time solo travelers</span>
+        <span>Simple on the surface</span>
+        <span>Powerful underneath</span>
+        <span>Powered by Notion</span>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <section id="pricing">
+      <div class="wrap">
+        <div class="intro">
+          <span class="eyebrow">Choose your level</span>
+          <h2>Start simple. Go deeper when you need it.</h2>
+          <p>Each tier <strong>adds a new layer of confidence</strong>, not just more pages.</p>
+        </div>
+        <div class="pricing">
+          <article class="price">
+            <div class="tier">BASIC</div>
+            <h3>Plan</h3>
+            <p>For travelers who want one clear place to organize their trip.</p>
+            <ul class="list">
+              <li>Trip dashboard</li>
+              <li>Itinerary & places</li>
+              <li>Bookings & budget</li>
+              <li>Expenses & tasks</li>
+            </ul>
+            <a class="btn btn-ghost gumroad" data-tier="basic" href="GUMROAD_BASIC_URL">Get Basic</a>
+          </article>
+
+          <article class="price featured">
+            <div class="tier">PRO</div>
+            <h3>Prepare</h3>
+            <p>For travelers who want to know they're genuinely ready before departure.</p>
+            <ul class="list">
+              <li>Everything in Basic</li>
+              <li>Packing & documents</li>
+              <li>Safety system</li>
+              <li>Readiness & Travel Mode</li>
+            </ul>
+            <a class="btn btn-primary gumroad" data-tier="pro" href="GUMROAD_PRO_URL">Get Pro</a>
+          </article>
+
+          <article class="price">
+            <div class="tier">ULTIMATE</div>
+            <h3>Handle</h3>
+            <p>For travelers who want a plan when the original plan doesn't work.</p>
+            <ul class="list">
+              <li>Everything in Pro</li>
+              <li>What-If scenarios</li>
+              <li>Backup plans</li>
+              <li>Emergency hub</li>
+            </ul>
+            <a class="btn btn-ghost gumroad" data-tier="ultimate" href="GUMROAD_ULTIMATE_URL">Get Ultimate</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="soft">
+      <div class="wrap">
+        <div class="intro">
+          <span class="eyebrow">FAQ</span>
+          <h2>A few things you might wonder.</h2>
+        </div>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-q"><span>Is this a Notion template?</span><span class="plus">+</span></button>
+            <div class="faq-a"><p>Yes. SOLO TRAVEL OS is designed as a connected Notion travel system rather than a collection of unrelated pages.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>What's the difference between Pro and Ultimate?</span><span class="plus">+</span></button>
+            <div class="faq-a"><p>Pro focuses on preparation. Ultimate adds the contingency layer for when plans change or something goes wrong.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>Do I need to be experienced with Notion?</span><span class="plus">+</span></button>
+            <div class="faq-a"><p>No. The system is designed around clear views and a simple workflow so you can use it without understanding the database architecture underneath.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>Does Ultimate guarantee that nothing will go wrong?</span><span class="plus">+</span></button>
+            <div class="faq-a"><p>No. It is a planning and organization system designed to keep useful information, contacts, backups and action plans together when circumstances change.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final">
+      <div class="wrap">
+        <span class="eyebrow">Travel with a little more clarity</span>
+        <h2>Your trip doesn't need<br>to live in ten different places.</h2>
+        <p>Plan it. Prepare for it. Keep moving when plans change.</p>
+        <a class="btn btn-primary" href="#pricing">Get SOLO TRAVEL OS</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 SOLO TRAVEL OS</div>
+      <div>Travel alone. Feel prepared.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
